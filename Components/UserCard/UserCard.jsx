@@ -1,13 +1,21 @@
-export default function UserCard() {
+export default function UserCard({ user }) {
   return (
     <div className="user-card">
       <div>
-        <img alt="avatar" />
+        <img src={user.avatar_url} srcalt="avatar" />
       </div>
       <div>
-        <h5> Name:</h5>
+        <h5> Name: {user.login}</h5>
 
-        <p> Username: </p>
+        <p>
+          {" "}
+          Username:{" "}
+          {
+            <a href={user.html_url} target="_blank">
+              gitHub link
+            </a>
+          }
+        </p>
       </div>
     </div>
   );
